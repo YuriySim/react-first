@@ -1,0 +1,28 @@
+.substrate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0, 0.4);
+  z-index: 2000;
+}
+
+.substrate.active {
+  display: flex;
+}
+
+.window {
+  width: 300px;
+  min-height: 250px;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #53627A;
+  border-radius: 10px;
+}

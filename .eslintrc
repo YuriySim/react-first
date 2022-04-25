@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "no-console": "warn",
+    "prefer-const": "error", //если константа ниразу не изменяет свое значение, то лучше выбрать ее тип const
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "indent": ["warn", 2], //отступ 2 пробера
+    "max-len": ["warn", {"code": 100}],
+    "comma-dangle": ["error", "always-multiline"], //запятая после последнего элемента объекта
+    "semi": ["warn", "always"], //проверка точек с запятой
+    "import/order": ["warn", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+      "newlines-between": "always-and-inside-groups"
+    }] //определяет порядок import и отступов между ними
+  }
+}

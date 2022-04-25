@@ -17,10 +17,10 @@ const PostPage = () => {
   const {id} = useParams();
 
   const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
-    const response_1 = await PostService.getPostsById(id);
-    const response_2 = await PostService.getCommentsPost(id);
-    setPost(response_1.data);
-    setComments(response_2.data);
+    const response1 = await PostService.getPostsById(id);
+    const response2 = await PostService.getCommentsPost(id);
+    setPost(response1.data);
+    setComments(response2.data);
   });
 
   useEffect(() => {

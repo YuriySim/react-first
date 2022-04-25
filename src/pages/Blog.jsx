@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { throttle } from 'lodash';
 
 import PostService from '../API/PostService';
 import ru from '../locales/ru.json';
@@ -71,15 +72,15 @@ const Blog = () => {
         <div className="blog__search">
           <Input
             placeholder="Search..."
-            value={filter.query}
-            onChange={e => setFilter({...filter, query: e.target.value})}
+            value={ filter.query }
+            onChange={ throttle(e => setFilter({...filter, query: e.target.value}), 300) }
           />
         </div>
 
         <div className="blog__select">
           <Select
-            value={filter.sort}
-            onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
+            value={ filter.sort }
+            onChange={ selectedSort => setFilter({...filter, sort: selectedSort}) }
             options={[
               {value: '', name: 'Sort by:'},
               {value: 'title', name: 'Title'},
@@ -91,8 +92,8 @@ const Blog = () => {
         <div className="blog__create">
           <div className="blog__create-left">
             <Select
-              value={limit}
-              onChange={selectLimit}
+              value={ limit }
+              onChange={ selectLimit }
               options={[
                 {value: '', name: 'Show by:'},
                 {value: 5, name: '5'},
@@ -104,8 +105,8 @@ const Blog = () => {
           </div>
 
           <div className="blog__create-right">
-            <Button onClick={() => {setModal(true);}}>
-              {keySwitch ? en.create_post : ru.create_post}
+            <Button onClick={ () => setModal(true) }>
+              { keySwitch ? en.create_post : ru.create_post }
             </Button>
           </div>
         </div>
@@ -126,7 +127,7 @@ const Blog = () => {
           visible={ modal }
           setVisible={ setModal }
           createPost={ createPost }
-          posts={posts}
+          posts={ posts }
         />
       </div>
 

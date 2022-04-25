@@ -7,9 +7,9 @@ const Pagination = ({totalPages, page, changePage}) => {
 
   return (
     <div className="blog__pagination">
-      {pagesArray.map(p =>
+      {pagesArray.map((p, index) =>
         <span
-          key={ p }
+          key={ index }
           className={
             page === p
               ? 'blog__pagination-btn blog__pagination-btn_active'

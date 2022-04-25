@@ -4,7 +4,7 @@
     "react-app/jest"
   ],
   "rules": {
-    "react-hooks/exhaustive-deps": "off",
+    "react-hooks/exhaustive-deps": "off", //or: // eslint-disable-line react-hooks/exhaustive-deps напротив hook
     "no-console": "warn",
     "prefer-const": "error", //если константа ниразу не изменяет свое значение, то лучше выбрать ее тип const
     "quotes": ["error", "single"],
